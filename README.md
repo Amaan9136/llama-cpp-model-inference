@@ -34,4 +34,4 @@ With JSON body:
 
 ### The response JSON will contain generated text.
 
-## This solution does **not** use any Ollama APIs or architecture. It uses the open-source `llama.cpp` interface to run inference on the LLaMA 3.2 model stored locally in /models folder.
+## This solution does **not** use any Ollama APIs or architecture. It uses the open-source `llama.cpp` interface to run inference on the LLaMA 3.2 model stored locally in /models folder (Llama-cpp Model Inference\models\llama3.2\llama3.2.bin).

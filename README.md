@@ -26,3 +26,12 @@ Send a POST request to:
 `http://localhost:5000/generate`
 
 With JSON body:
+```json
+{
+   "prompt": "Your input prompt text here"
+}
+```
+
+### The response JSON will contain generated text.
+
+## This solution does **not** use any Ollama APIs or architecture. It uses the open-source `llama.cpp` interface to run inference on the LLaMA 3.2 model stored locally in /models folder.

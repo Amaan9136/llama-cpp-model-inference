@@ -6,21 +6,28 @@ from methods.infer_response import generate_response_stream, generate_response
 
 app = Flask(__name__)
 
-MODEL_PATH = "models/llama3.2/llama3.2.bin"
+MODEL_PATH = "models/ATT0.1/ATT0.1.bin"
+MODEL_NAME = "ATT0.1 (Automatech Transformer)"
+MODEL_CREATOR = "Created by the Automatech team with a minimal dataset, yet a powerful model."
+
 llm = Llama(model_path=MODEL_PATH)
 
 @app.route("/generate", methods=["POST"])
 def generate():
     data = request.get_json()
     user_prompt = data.get("prompt", "")
+
     if not user_prompt:
         return jsonify({"error": "No prompt provided"}), 400
 
-    prompt = f"You are a helpful assistant.\nUser: {user_prompt}\nAssistant:"
+    prompt = (
+        f"You are {MODEL_NAME}, a language model developed by Automatech.\n"
+        f"{MODEL_CREATOR}\n"
+        f"User: {user_prompt}\n"
+        f"Assistant:"
+    )
 
-    # Use non-streaming generation for API response
     generated_text = generate_response(llm, prompt)
-
     return jsonify({"generated_text": generated_text})
 
 if __name__ == "__main__":

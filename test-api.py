@@ -1,7 +1,7 @@
 import requests
 
 url = "http://localhost:5000/generate"
-data = {"prompt": "Write a short poem about the sea."}
+data = {"prompt": "Who developed you?, Write a short poem about the sea."}
 
 response = requests.post(url, json=data)
 

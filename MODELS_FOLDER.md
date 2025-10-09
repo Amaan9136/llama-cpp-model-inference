@@ -3,13 +3,13 @@
 explorer %USERPROFILE%\.ollama\models
 ```
 
-## To copy only the relevant blob files referenced in your model manifest from Ollama's .ollama\models\blobs folder to your target models\llama3.2 folder, use the following PowerShell commands in Windows:
+## To copy only the relevant blob files referenced in your model manifest from Ollama's .ollama\models\blobs folder to your target models\ folder, use the following PowerShell commands in Windows:
 ```bash
 # Source blobs folder
 $source = "C:\Users\Amaan M k\.ollama\models\blobs"
 
 # Destination folder
-$destination = "D:\0 AMAAN MAIN\0 Codes and Tools\My Python & ML\Ollama Model-Infer\models\llama3.2"
+$destination = "D:\0 AMAAN MAIN\0 Codes and Tools\My Python & ML\Ollama Model-Infer\models\"
 
 # List of blob hashes used in the manifest (without sha256- prefix)
 $blobs = @(
